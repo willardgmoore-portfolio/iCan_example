@@ -4,7 +4,12 @@ class ClassroomsController < ApplicationController
     authorize! :index, @classroom
   end
 
-  def new
+  def new 
+    @classrooms = Classroom.new
+    authorize! :index, @classroom
+  end
+
+  def create
     @classroom = Classroom.new(classroom_params)
     if @classroom.save
       flash[:success] = "Porject was saved!"

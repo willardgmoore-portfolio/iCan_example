@@ -12,7 +12,6 @@ class Ability
         can :read, :all
       elsif user.role?(:student)
         can :read, Classroom
-        raise
       elsif user.role?(:guest)
       end
     #
