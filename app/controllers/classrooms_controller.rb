@@ -1,12 +1,12 @@
 class ClassroomsController < ApplicationController
   def index 
     @classrooms = Classroom.all
-    authorize! :index, @classroom
+    authorize! :read, @classrooms
   end
 
   def new 
     @classrooms = Classroom.new
-    authorize! :index, @classroom
+    authorize! :index, @classrooms
   end
 
   def create
